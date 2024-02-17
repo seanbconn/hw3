@@ -1,7 +1,9 @@
 class PlacesController < ApplicationController
 
 def index
-    #render :template => "entries/index"
+
+  @places = Place.all
+
   end
   
 end

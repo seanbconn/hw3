@@ -27,3 +27,29 @@ ActiveRecord::Schema[7.1].define(version: 2022_02_10_225503) do
   end
 
 end
+
+#Delete Existing Data
+Place.destroy_all
+
+
+# Places
+new_place1 = Place.new
+new_place1["name"] = "Malaga, Spain"
+new_place1.save
+
+new_place2 = Place.new
+new_place2["name"] = "Innsbrook, Austria"
+new_place2.save
+
+new_place3 = Place.new
+new_place3["name"] = "Kauai, USA"
+new_place3.save
+
+new_place4 = Place.new
+new_place4["name"] = "Chicago, USA"
+new_place4.save
+
+new_place5 = Place.new
+new_place5["name"] = "Tokyo, Japan"
+new_place5.save
+

@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 #Delete Existing Data
-Place.destroy_all
+#Place.destroy_all
 
 #Places
 places = Place.create([{name: "Malaga, Spain"}, {name: "Innsbrook, Austria"}, {name: "Kauai, USA"}, {name: "Chicago, USA"}, {name: "Tokyo, Japan"}])

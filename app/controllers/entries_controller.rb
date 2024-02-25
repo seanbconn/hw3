@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
-# def create
+  def create
 
 #    # Start with a new place
 #    @entry = Entry.new

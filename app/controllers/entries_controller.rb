@@ -1,31 +1,24 @@
 class EntriesController < ApplicationController
 
-  def index
-    @entries = Entry.all
+  def show
+    @entry = Entry.find_by({"id" => params["id"]})
+    @place = Place.find_by({"id" => @entry["place_id"]})
   end
 
   def new
-    @entry = Entry.new
+    @place = Place.find_by({"id" => params["place_id"]})
   end
 
   def create
+   @entry = Entry.new
 
-#    # Start with a new place
-#    @entry = Entry.new
+   @entry["title"] = params["title"]
+   @entry["description"] = params["description"]
+   @entry["posted_on"] = params["posted_on"]
 
-#    # This assigns user-entered form data to the table of record, in our case places
-#    @entry["title"] = params["title"]
-#    @entry["description"] = params["description"]
-#    @entry["posted_on"] = params["posted_on"]
-
-#   # Assign relationship between entry and place.
-#    @entry["place_id"] = params["place_id"]
+   @entry["place_id"] = params["place_id"]
  
-#    # This saves the new entry in the Place row
-#    @entry.save
- 
-#    # Then we need to redirect the user
-#    redirect_to "/places/#{@entry["company_id"]}"
-#  end
-
+   @entry.save
+   redirect_to "/places/#{@entry["company_id"]}"
+  end
 end

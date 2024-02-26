@@ -8,15 +8,16 @@
 <ul>
   <% for entry in @entries %>
     <li>
-      <%= entry["title"] %>
-      <%= entry["description"] %>
-      <%= entry["posted_on"] %>
+      <a href="/entries/<%= entry["id"] %>">
+        <%= entry["title"] %>
+        <%= entry["posted_on"] %>
+      </a>
     </li>
   <% end %>
 </ul>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>%">Add a new entry</a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>">Add a new entry</a>
 
 <p>
   <a href="/places">Back to all my favorite places</a>

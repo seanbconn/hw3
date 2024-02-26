@@ -9,6 +9,8 @@ end
 def show
   # Find a place (show.html.erb in views)
   @place = Place.find_by({"id" => params["id"]})
+  @entries = Entry.where({"place_id" => @place["id"]})
+
   # @entry = Entry.where({"id" => params["company_id"]})
 end
 
